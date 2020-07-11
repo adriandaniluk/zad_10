@@ -58,10 +58,12 @@ def mouseClicked():
             library.addBook(Madzia.returnBook())
 
 class testyRzeczy(unittest.TestCase):
-    Madzia = Customer()
-    books = ["Naocznosc", "Sens Sztuki", "Harry Potter"]
-    library = Library(books)
     def testPierwszy(self):
-        self.assertEqual("Sens Sztuki", self.library.availableBooks[1])
+        books = ["Naocznosc", "Sens Sztuki", "Harry Potter"] # bo testy powinny być od siebie niezależne
+        library = Library(books)
+        self.assertEqual("Sens Sztuki", library.availableBooks[1])
     def testDrugi(self):
-        self.assertFalse(self.Madzia.book != "")
+        Madzia = Customer()
+        self.assertTrue(Madzia.book == "") # lepiej tak, niż podwójne zaprzeczenie
+        
+#1,5pkt
